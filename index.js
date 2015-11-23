@@ -3,6 +3,9 @@
   var updateInterval = 30 // sec, 0 disable auto update
 
   var loaderEl = document.querySelector(".js-putainde-Tab-loader")
+  var settingsEl = document.querySelector(".js-putainde-Tab-settings")
+  var closeSettingsEl = document.querySelector(".js-putainde-Tab-settings-close")
+  var toggleSettingsEl = document.querySelector(".js-putainde-Tab-toggleSettings")
   var backgroundEl = document.querySelector(".js-putainde-Tab-background")
   var imgEl
   var imgBlurEl
@@ -38,6 +41,14 @@
           changeBackgroundEl.classList.remove("putainde-Tab-animate-spin")
         })
       })
+    })
+
+    toggleSettingsEl.addEventListener("click", function() {
+      settingsEl.classList.toggle("putainde-Tab-settings--hidden")
+    })
+
+    closeSettingsEl.addEventListener("click", function() {
+      settingsEl.classList.toggle("putainde-Tab-settings--hidden", true)
     })
 
     loadCustomisations()
